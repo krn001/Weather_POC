@@ -12,7 +12,7 @@ import Alamofire
 class WebAPI{
     
     static let shared = WebAPI()
-    static let apiKey = "7297b9f2a0b640d197095ea13fc53aac"
+     let apiKey = "7297b9f2a0b640d197095ea13fc53aac"
     let baseURL = "http://api.openweathermap.org/data/2.5/find?"
 
     private  init(){
@@ -21,7 +21,7 @@ class WebAPI{
     }
     
     
-    func weatherUrlWith(lattitude: Double, longitude: Double, key: String){
+    func weatherUrlWith(lattitude: Double, longitude: Double, key: String)-> String{
         
         return baseURL + "lat=\(lattitude)&lon=\(longitude)&cnt=10&appid=" + apiKey
     }
@@ -79,12 +79,6 @@ class WebAPI{
         }
     }
     
-    
-    
-    
-    
- 
-    
 }
 
 class  JSonFormatter{
@@ -107,7 +101,7 @@ class  JSonFormatter{
             
         }
         
-        
+        return weathers
         
         
         
