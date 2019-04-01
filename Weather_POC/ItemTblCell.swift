@@ -35,6 +35,12 @@ open class ItemTblCell : UITableViewCell {
     
     open func setData(_ data: Any?) {
         
+        if let weather = data as? PlaceWeather{
+            
+            self.placeLbl.text = "Place: " + weather.placeName
+            self.tempLbl.text = "Temperature: \(weather.temperature)"
+            self.humidityLbl.text = "Temperature: \(weather.humidity)"
+        }
     }
     
     override open func setHighlighted(_ highlighted: Bool, animated: Bool) {
