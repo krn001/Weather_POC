@@ -9,11 +9,12 @@
 import UIKit
 import SVProgressHUD
 import Alamofire
+import CoreLocation
 
 class WeatherTblViewController: UITableViewController {
     
     var placeWeathers : [PlaceWeather]? = nil
-    
+    var locationManager:CLLocationManager!
    
     
     override func viewDidLoad() {
@@ -22,37 +23,60 @@ class WeatherTblViewController: UITableViewController {
         self.setUp()
         
         
-        if  self.placeWeathers == nil || self.placeWeathers?.count == 0
-        {
+      
             
-            if NetworkReachabilityManager()?.isReachable == true{
-                self.showLoader()
-                WebAPI.shared.loadWeather(lattitude: 0, longitude: 0, completionhandeler: { (weathers, isLoaded) in
-                    self.hideLoader()
-                    if weathers != nil{
-                        
-                        self.placeWeathers = weathers as! [PlaceWeather]?
-                        self.tableView.reloadData()
-                    }
-                    
-                })
-            }else{
-                print("no network")
-            }
+        
             
-        }
+       
         
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     func setUp(){
-        
         let className = ItemTblCell.identifier
         self.tableView.register(UINib.init(nibName:className, bundle: nil), forCellReuseIdentifier:className )
         self.tableView.tableFooterView = UIView()
         self.tableView.estimatedRowHeight = 88
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.setUpLocation()
+       
+        
+    }
+    
+    func setUpLocation(){
+        
+        if locationManager == nil{
+            
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            
+            if CLLocationManager.locationServicesEnabled(){
+                locationManager.startUpdatingLocation()
+            }
+        }
+       
+    }
+    
+    func loadWeatherFor(location: CLLocation){
+        
+        // if you dont want to refresh
+        if NetworkReachabilityManager()?.isReachable == true{
+            self.showLoader()
+            WebAPI.shared.loadWeather(lattitude: location.coordinate.latitude, longitude: location.coordinate.longitude, completionhandeler: { (weathers, isLoaded) in
+                self.hideLoader()
+                if weathers != nil{
+                    
+                    self.placeWeathers = weathers as! [PlaceWeather]?
+                    self.tableView.reloadData()
+                }
+                
+            })
+        }else{
+            print("no network")
+        }
         
     }
     
@@ -61,6 +85,29 @@ class WeatherTblViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+}
+
+
+extension WeatherTblViewController: CLLocationManagerDelegate{
+    
+    //MARK: - location delegate methods
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation :CLLocation = locations[0] as CLLocation
+        
+        print("device latitude = \(userLocation.coordinate.latitude)")
+        print("device longitude = \(userLocation.coordinate.longitude)")
+        
+        if self.placeWeathers == nil || self.placeWeathers?.count == 0{
+            self.loadWeatherFor(location: userLocation)
+
+        }
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error \(error)")
+    }
     
 }
 

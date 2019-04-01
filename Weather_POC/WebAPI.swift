@@ -1,4 +1,4 @@
-//
+ //
 //  WebAPI.swift
 //  Weather_POC
 //
@@ -8,6 +8,8 @@
 
 import Foundation
 import Alamofire
+
+
 
 class WebAPI{
     
