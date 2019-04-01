@@ -14,6 +14,8 @@
 		0447CFEA2252046B002F0669 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0447CFE92252046B002F0669 /* Assets.xcassets */; };
 		0447CFED2252046B002F0669 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0447CFEB2252046B002F0669 /* LaunchScreen.storyboard */; };
 		0447CFF82252046B002F0669 /* Weather_POCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447CFF72252046B002F0669 /* Weather_POCUITests.swift */; };
+		0447D00322520571002F0669 /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447D00222520571002F0669 /* WebAPI.swift */; };
+		0447D005225208F3002F0669 /* PlaceWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0447D004225208F3002F0669 /* PlaceWeather.swift */; };
 		DD8CEC367159EAA825F0DEB9 /* Pods_Weather_POC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BA5DC665283D2CE5B4B5BA /* Pods_Weather_POC.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		0447CFF32252046B002F0669 /* Weather_POCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Weather_POCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0447CFF72252046B002F0669 /* Weather_POCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_POCUITests.swift; sourceTree = "<group>"; };
 		0447CFF92252046B002F0669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0447D00222520571002F0669 /* WebAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
+		0447D004225208F3002F0669 /* PlaceWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceWeather.swift; sourceTree = "<group>"; };
 		19BA5DC665283D2CE5B4B5BA /* Pods_Weather_POC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_POC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C32C421FCD9F05183379D853 /* Pods-Weather_POC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_POC.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_POC/Pods-Weather_POC.release.xcconfig"; sourceTree = "<group>"; };
 		C6BCF2ADE646CE9B3EE560D5 /* Pods-Weather_POC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather_POC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather_POC/Pods-Weather_POC.debug.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 		0447CFD32252046B002F0669 = {
 			isa = PBXGroup;
 			children = (
+				0447D004225208F3002F0669 /* PlaceWeather.swift */,
 				0447CFDE2252046B002F0669 /* Weather_POC */,
 				0447CFF62252046B002F0669 /* Weather_POCUITests */,
 				0447CFDD2252046B002F0669 /* Products */,
@@ -93,6 +98,7 @@
 				0447CFEB2252046B002F0669 /* LaunchScreen.storyboard */,
 				0447CFEE2252046B002F0669 /* Info.plist */,
 				0447CFE62252046B002F0669 /* Weather_POC.xcdatamodeld */,
+				0447D00222520571002F0669 /* WebAPI.swift */,
 			);
 			path = Weather_POC;
 			sourceTree = "<group>";
@@ -282,6 +288,8 @@
 				0447CFE22252046B002F0669 /* ViewController.swift in Sources */,
 				0447CFE82252046B002F0669 /* Weather_POC.xcdatamodeld in Sources */,
 				0447CFE02252046B002F0669 /* AppDelegate.swift in Sources */,
+				0447D005225208F3002F0669 /* PlaceWeather.swift in Sources */,
+				0447D00322520571002F0669 /* WebAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +499,7 @@
 				0447CFFE2252046B002F0669 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0447CFFF2252046B002F0669 /* Build configuration list for PBXNativeTarget "Weather_POCUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +508,7 @@
 				0447D0012252046B002F0669 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
