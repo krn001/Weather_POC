@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemTblCell" rowHeight="120" id="lOf-T7-Gf1" customClass="ItemTblCell" customModule="Weather_POC" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lOf-T7-Gf1" id="fvv-zP-n7x">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0O-P7-pDg">
+                        <rect key="frame" x="24" y="8" width="327" height="34"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Z4-Co-pyq">
+                        <rect key="frame" x="24" y="50" width="327" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLg-9Q-o2r">
+                        <rect key="frame" x="24" y="79" width="327" height="25"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="rLg-9Q-o2r" firstAttribute="leading" secondItem="5Z4-Co-pyq" secondAttribute="leading" id="5Bl-FF-dnC"/>
+                    <constraint firstItem="5Z4-Co-pyq" firstAttribute="top" secondItem="T0O-P7-pDg" secondAttribute="bottom" constant="8" id="Dro-CR-1LS"/>
+                    <constraint firstItem="5Z4-Co-pyq" firstAttribute="centerY" secondItem="fvv-zP-n7x" secondAttribute="centerY" id="M9E-m5-UcI"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="rLg-9Q-o2r" secondAttribute="bottom" constant="7.5" id="NHp-aa-XmF"/>
+                    <constraint firstItem="5Z4-Co-pyq" firstAttribute="leading" secondItem="T0O-P7-pDg" secondAttribute="leading" id="fWz-PI-t4G"/>
+                    <constraint firstAttribute="topMargin" secondItem="T0O-P7-pDg" secondAttribute="top" id="fq9-JY-snJ"/>
+                    <constraint firstItem="5Z4-Co-pyq" firstAttribute="trailing" secondItem="T0O-P7-pDg" secondAttribute="trailing" id="gaD-LU-9bB"/>
+                    <constraint firstItem="rLg-9Q-o2r" firstAttribute="trailing" secondItem="5Z4-Co-pyq" secondAttribute="trailing" id="nxz-WM-hvN"/>
+                    <constraint firstItem="rLg-9Q-o2r" firstAttribute="top" secondItem="5Z4-Co-pyq" secondAttribute="bottom" constant="8" id="qyq-cf-6Oz"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="5Z4-Co-pyq" secondAttribute="trailing" constant="16" id="uzF-4F-J17"/>
+                    <constraint firstItem="5Z4-Co-pyq" firstAttribute="leading" secondItem="fvv-zP-n7x" secondAttribute="leadingMargin" constant="16" id="w3h-vD-I4d"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="humidityLbl" destination="rLg-9Q-o2r" id="RI2-rk-rpE"/>
+                <outlet property="placeLbl" destination="T0O-P7-pDg" id="m9G-7m-GvR"/>
+                <outlet property="tempLbl" destination="5Z4-Co-pyq" id="euR-ER-VpY"/>
+            </connections>
+            <point key="canvasLocation" x="13.5" y="-142"/>
+        </tableViewCell>
+    </objects>
+</document>
