@@ -42,7 +42,7 @@ class WebAPI{
                 case .success:
                     if(response.response?.statusCode == 200){
                         
-                        if let data = response.result.value as? [[String: Any]]  // check if Array type
+                        if let data = response.result.value as? [String: Any] // check if Array type
                         {
                             
                             print(data)
@@ -83,24 +83,33 @@ class WebAPI{
 
 class  JSonFormatter{
     
-   static func objectsFromWetherJSON(dicn: [[String:Any]]) -> [PlaceWeather]
+   static func objectsFromWetherJSON(dicn: [String:Any]) -> [PlaceWeather]
     {
         
         var weathers = [PlaceWeather]()
-        for weatherDicn in dicn{
-            
-            
-            if let name = weatherDicn["Area name"] as? String, let temp = weatherDicn["temperature"] as? Float, let humidity = weatherDicn["humidity"] as? Float{
+        
+        if let list = dicn["list"] as? [[String:Any]]{
+            for weatherDicn in list{
                 
-                let   place = PlaceWeather.init(placeName: name, temperature: temp, humidity: humidity)
+                if let main = weatherDicn["main"] as? [String:Any]{
+                    
+                    
+                    if let name = weatherDicn["name"] as? String, let temp = main["temp"] as? Float, let humidity = main["humidity"] as? Float{
+                        
+                        let   place = PlaceWeather.init(placeName: name, temperature: temp, humidity: humidity)
+                        
+                        weathers.append(place)
+                    }
+                }
                 
-                weathers.append(place)
+               
+                
+                
+                
             }
             
-            
-            
         }
-        
+       
         return weathers
         
         
