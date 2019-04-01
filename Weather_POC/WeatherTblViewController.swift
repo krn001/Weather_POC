@@ -55,6 +55,8 @@ class WeatherTblViewController: UITableViewController {
             
             if CLLocationManager.locationServicesEnabled(){
                 locationManager.startUpdatingLocation()
+            }else{
+                print("Redirect here to enable service")
             }
         }
        
@@ -98,7 +100,8 @@ extension WeatherTblViewController: CLLocationManagerDelegate{
         print("device latitude = \(userLocation.coordinate.latitude)")
         print("device longitude = \(userLocation.coordinate.longitude)")
         
-        if self.placeWeathers == nil || self.placeWeathers?.count == 0{
+        if self.placeWeathers == nil || self.placeWeathers?.count == 0 // to update frequently , you can exclude this condtion
+        {
             self.loadWeatherFor(location: userLocation)
 
         }

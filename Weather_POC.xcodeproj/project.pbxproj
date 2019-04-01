@@ -45,7 +45,7 @@
 		0447CFF72252046B002F0669 /* Weather_POCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_POCUITests.swift; sourceTree = "<group>"; };
 		0447CFF92252046B002F0669 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0447D00222520571002F0669 /* WebAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
-		0447D004225208F3002F0669 /* PlaceWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceWeather.swift; sourceTree = "<group>"; };
+		0447D004225208F3002F0669 /* PlaceWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceWeather.swift; path = ../PlaceWeather.swift; sourceTree = "<group>"; };
 		0447D00622520D34002F0669 /* ItemTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTblCell.swift; sourceTree = "<group>"; };
 		0447D00822520D62002F0669 /* ItemTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemTblCell.xib; sourceTree = "<group>"; };
 		0447D00A225211EF002F0669 /* WeatherTblViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTblViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +76,6 @@
 		0447CFD32252046B002F0669 = {
 			isa = PBXGroup;
 			children = (
-				0447D004225208F3002F0669 /* PlaceWeather.swift */,
 				0447CFDE2252046B002F0669 /* Weather_POC */,
 				0447CFF62252046B002F0669 /* Weather_POCUITests */,
 				0447CFDD2252046B002F0669 /* Products */,
@@ -97,6 +96,7 @@
 		0447CFDE2252046B002F0669 /* Weather_POC */ = {
 			isa = PBXGroup;
 			children = (
+				0447D004225208F3002F0669 /* PlaceWeather.swift */,
 				0447CFDF2252046B002F0669 /* AppDelegate.swift */,
 				0447CFE12252046B002F0669 /* ViewController.swift */,
 				0447CFE32252046B002F0669 /* Main.storyboard */,

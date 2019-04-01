@@ -8,6 +8,7 @@
 
 import Foundation
 
+// this class can be updated for more flexible resonse
 
 class  PlaceWeather{
     
